@@ -30,7 +30,7 @@ bias = 2
 # Weighted sum of inputs + bias
 output = (inputs[0] * weights[0]) + (inputs[1] * weights[1]) + (inputs[2] * weights[2]) + bias
 print(output)
-
+```
 # Layer of Neurons
 
 In a neural network, neurons are typically organized in **layers**. A **layer** is a group of neurons that work together to process the same input, each with its own set of weights and biases. The outputs from one layer become the inputs for the next layer, allowing the network to build increasingly complex representations of the data.
