@@ -26,3 +26,6 @@ Neural-Network-From-Scratch/
 │   └── ... (more chapters to come)
 │
 └── README.md           # This file
+```
+## Credits
+All credit for the content and concepts goes to Sentdex, the creator of this wonderful resource. This repository is a personal learning project inspired by his book and tutorial series.
