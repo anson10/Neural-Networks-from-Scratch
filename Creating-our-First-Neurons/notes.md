@@ -10,16 +10,17 @@ Inputs are the data that a neuron receives. In the simplest case, inputs can be 
 ### Weights
 Weights determine the importance of each input to the neuron's output. Each input has an associated weight, and the weighted sum of all inputs is calculated. The larger the weight, the more influence that input has on the final output.
 
-\[
+```latex
 \text{Weighted Sum} = (input_1 \times weight_1) + (input_2 \times weight_2) + ... + (input_n \times weight_n)
-\]
-
+\
+```
 ### Biases
 Bias is an additional value added to the weighted sum. It helps the neuron make adjustments beyond the combination of inputs and weights, allowing the model to fit the data better.
 
-\[
+```latex
 \text{Output} = \text{ActivationFunction}(\text{Weighted Sum} + \text{Bias})
 \]
+```
 
 ### Example:
 ```python
