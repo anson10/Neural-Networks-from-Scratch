@@ -16,11 +16,11 @@ Neural-Network-From-Scratch/
 │
 ├── Chapter-1/
 │   ├── notes.md        # Notes from Chapter 1
-│   ├── code.py         # Code implementation for Chapter 1
+│   ├── code.ipynb         # Code implementation for Chapter 1
 │
 ├── Chapter-2/
 │   ├── notes.md        # Notes from Chapter 2
-│   ├── code.py         # Code implementation for Chapter 2
+│   ├── code.ipynb        # Code implementation for Chapter 2
 │
 ├── Chapter-3/
 │   └── ... (more chapters to come)
