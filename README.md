@@ -1,1 +1,28 @@
-# Neural-Networks-from-Scratch
+# Neural Network From Scratch - Learning Journey
+
+This repository contains my personal learning journey through the book **Neural Network From Scratch** by [Sentdex](https://www.youtube.com/user/sentdex). The goal of this project is to document my understanding of neural networks and implement the concepts explained in each chapter of the book.
+
+## Structure of the Repository
+
+Each chapter is organized into its own folder. In each folder, you'll find:
+
+- **Notes:** Summaries of the key concepts from the chapter.
+- **Code:** Python implementations of the neural network concepts covered.
+
+### Folder Structure:
+
+```plaintext
+Neural-Network-From-Scratch/
+│
+├── Chapter-1/
+│   ├── notes.md        # Notes from Chapter 1
+│   ├── code.py         # Code implementation for Chapter 1
+│
+├── Chapter-2/
+│   ├── notes.md        # Notes from Chapter 2
+│   ├── code.py         # Code implementation for Chapter 2
+│
+├── Chapter-3/
+│   └── ... (more chapters to come)
+│
+└── README.md           # This file
