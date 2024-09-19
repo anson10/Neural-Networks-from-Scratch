@@ -1,15 +1,3 @@
-Activation function
-
-Step Activation Function
-Linear Activation Function
-Sigmoid Activation Function
-RELU
-Softmax Activation Function
-
-
-Real Use for Activation Function
-
-
 # Activation Functions Overview
 
 ## What are Activation Functions?
