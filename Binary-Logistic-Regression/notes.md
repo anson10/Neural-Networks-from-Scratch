@@ -1,5 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
-
 # Binary Logistic Regression
 
 Binary Logistic Regression is a type of regression analysis used when the dependent variable (also called the target or outcome) is **binary** (i.e., it can take two possible values). It is used to model the probability that a given input belongs to one of the two possible classes.
@@ -62,7 +60,6 @@ Binary Logistic Regression is a type of regression analysis used when the depend
    - $ m $ is the number of training examples.
    - $ y^{(i)} $ is the actual label for the $ i $-th example.
    - $ \hat{y}^{(i)} $ is the predicted probability for the $ i $-th example.
-
 
 # Sigmoid Activation Function and its Derivative
 
@@ -166,7 +163,6 @@ $$
 
 This result is commonly used in backpropagation algorithms, making it efficient to calculate the gradient during training of neural networks.
 
-
 # Binary Cross-Entropy Loss and Its Derivative
 
 ## What is Binary Cross-Entropy Loss?
@@ -198,111 +194,37 @@ The **derivative of binary cross-entropy loss** with respect to the predicted pr
 
 ### Loss Function for a Single Example
 
-The binary cross-entropy loss for a single example is:
+The binary cross-entropy loss for a single example can be written as:
 
 $$
-L_i = - \left( y_i \cdot \log(\hat{y}_i) + (1 - y_i) \cdot \log(1 - \hat{y}_i) \right)
+L(y, \hat{y}) = - \left( y \cdot \log(\hat{y}) + (1 - y) \cdot \log(1 - \hat{y}) \right)
 $$
 
-### Step-by-Step Derivation
+### Taking the Derivative
 
-1. **Derivative with respect to $\hat{y}_i$**:
+To find the derivative of the loss with respect to the predicted probability $\hat{y}$:
 
-   We want to compute $\frac{dL_i}{d\hat{y}_i}$.
-
-   For $y_i = 1$:
-
-   $$
-   L_i = - \log(\hat{y}_i)
-   $$
-
-   So the derivative is:
+1. **Use the chain rule**:
+   We need to differentiate the loss function:
 
    $$
-   \frac{dL_i}{d\hat{y}_i} = -\frac{1}{\hat{y}_i}
+   \frac{dL}{d\hat{y}} = -\left( \frac{y}{\hat{y}} - \frac{1 - y}{1 - \hat{y}} \right)
    $$
 
-   For $y_i = 0$:
+2. **Simplify**:
+   This can be simplified to:
 
    $$
-   L_i = - \log(1 - \hat{y}_i)
+   \frac{dL}{d\hat{y}} = \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})}
    $$
 
-   So the derivative is:
+### Final Result
 
-   $$
-   \frac{dL_i}{d\hat{y}_i} = \frac{1}{1 - \hat{y}_i}
-   $$
-
-2. **Combining the two cases**:
-
-   Combining both cases into a single expression:
-
-   $$
-   \frac{dL_i}{d\hat{y}_i} = - \frac{y_i}{\hat{y}_i} + \frac{1 - y_i}{1 - \hat{y}_i}
-   $$
-
-   This works whether $y_i = 0$ or $y_i = 1$.
-
-3. **Using the sigmoid function**:
-
-   Since $\hat{y}_i = \sigma(z_i)$, where the sigmoid function $\sigma(z_i)$ is:
-
-   $$
-   \sigma(z_i) = \frac{1}{1 + e^{-z_i}}
-   $$
-
-   And its derivative is:
-
-   $$
-   \frac{d\sigma(z_i)}{dz_i} = \sigma(z_i) \cdot (1 - \sigma(z_i))
-   $$
-
-4. **Final Gradient with respect to $z_i$**:
-
-   Now, we need the derivative of the loss with respect to $z_i$ (not just $\hat{y}_i$). Using the chain rule:
-
-   $$
-   \frac{dL_i}{dz_i} = \frac{dL_i}{d\hat{y}_i} \cdot \frac{d\hat{y}_i}{dz_i}
-   $$
-
-   The derivative of the sigmoid function gives us $\frac{d\hat{y}_i}{dz_i} = \hat{y}_i \cdot (1 - \hat{y}_i)$. Substituting this in:
-
-   $$
-   \frac{dL_i}{dz_i} = \left( \hat{y}_i - y_i \right)
-   $$
-
-   So, the derivative of the binary cross-entropy loss with respect to $z_i$ is:
-
-   $$
-   \frac{dL_i}{dz_i} = \hat{y}_i - y_i
-   $$
-
-## Final Result
-
-The gradient of the binary cross-entropy loss with respect to the input $z_i$ of the sigmoid function is:
+The derivative of the binary cross-entropy loss is:
 
 $$
-\frac{dL}{dz_i} = \hat{y}_i - y_i
+\frac{dL}{d\hat{y}} = \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})}
 $$
 
-This result is used in backpropagation to update the weights of the neural network.
-
-## Summary
-
-- **Binary cross-entropy loss** is used for binary classification tasks.
-- The loss is computed as:
-
-  $$
-  L = - \frac{1}{m} \sum_{i=1}^{m} \left( y_i \cdot \log(\hat{y}_i) + (1 - y_i) \cdot \log(1 - \hat{y}_i) \right)
-  $$
-
-- The **derivative** of the binary cross-entropy loss with respect to $z_i$ (the input to the sigmoid function) is:
-
-  $$
-  \frac{dL}{dz_i} = \hat{y}_i - y_i
-  $$
-
-  This derivative is crucial for backpropagation in training neural networks.
-
+This derivative is useful for updating the weights during the training process of a neural network using gradient descent.
 
