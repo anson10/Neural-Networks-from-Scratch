@@ -1,4 +1,3 @@
-
 # Deep Learning Concepts
 
 ## Partial Derivatives
