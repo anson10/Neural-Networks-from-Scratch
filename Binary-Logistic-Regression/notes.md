@@ -188,42 +188,64 @@ This loss penalizes incorrect predictions. If the predicted probability ($\hat{y
 - If $y_i = 1$: The loss focuses on $\log(\hat{y}_i)$, so the predicted probability $\hat{y}_i$ should be close to 1 to minimize the loss.
 - If $y_i = 0$: The loss focuses on $\log(1 - \hat{y}_i)$, so the predicted probability $\hat{y}_i$ should be close to 0 to minimize the loss.
 
-## Derivative of Binary Cross-Entropy Loss
+## Derivative of the Sigmoid Function
 
-The **derivative of binary cross-entropy loss** with respect to the predicted probability $\hat{y}_i$ is needed for backpropagation in neural networks. Let’s derive it step-by-step.
+### Sigmoid Function
 
-### Loss Function for a Single Example
+The **sigmoid function** is commonly used in binary classification tasks, as it maps any real-valued number to a value between 0 and 1, which can be interpreted as a probability.
 
-The binary cross-entropy loss for a single example can be written as:
-
-$$
-L(y, \hat{y}) = - \left( y \cdot \log(\hat{y}) + (1 - y) \cdot \log(1 - \hat{y}) \right)
-$$
-
-### Taking the Derivative
-
-To find the derivative of the loss with respect to the predicted probability $\hat{y}$:
-
-1. **Use the chain rule**:
-   We need to differentiate the loss function:
-
-   $$
-   \frac{dL}{d\hat{y}} = -\left( \frac{y}{\hat{y}} - \frac{1 - y}{1 - \hat{y}} \right)
-   $$
-
-2. **Simplify**:
-   This can be simplified to:
-
-   $$
-   \frac{dL}{d\hat{y}} = \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})}
-   $$
-
-### Final Result
-
-The derivative of the binary cross-entropy loss is:
+The sigmoid function is defined as:
 
 $$
-\frac{dL}{d\hat{y}} = \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})}
+\sigma(z) = \frac{1}{1 + e^{-z}}
 $$
 
-This derivative is useful for updating the weights during the training process of a neural network using gradient descent.
+### Derivative of the Sigmoid Function
+
+We first express the function in a more convenient form for differentiation:
+
+$$
+\sigma(z) = (1 + e^{-z})^{-1}
+$$
+
+Differentiate using the chain rule: Apply the chain rule to find the derivative of $\sigma(z)$:
+
+$$
+\frac{d}{dz} \sigma(z) = \frac{d}{dz} \left( (1 + e^{-z})^{-1} \right)
+$$
+
+Using the chain rule:
+
+$$
+\frac{d}{dz} \left( (1 + e^{-z})^{-1} \right) = -(1 + e^{-z})^{-2} \cdot \frac{d}{dz}(1 + e^{-z})
+$$
+
+Differentiate the inner expression: Now, differentiate $1 + e^{-z}$:
+
+$$
+\frac{d}{dz}(1 + e^{-z}) = -e^{-z}
+$$
+
+Substitute back into the chain rule: Substitute the result into the chain rule expression:
+
+$$
+\frac{d}{dz} \sigma(z) = -(1 + e^{-z})^{-2} \cdot (-e^{-z})
+$$
+
+Simplify: The negatives cancel out, leaving us with:
+
+$$
+\frac{d}{dz} \sigma(z) = \frac{e^{-z}}{(1 + e^{-z})^2}
+$$
+
+Relate to the sigmoid function: Now, express this result in terms of $\sigma(z)$. Recall that:
+
+$$
+\sigma(z) = \frac{1}{1 + e^{-z}} \quad \text{and} \quad 1 - \sigma(z) = \frac{e^{-z}}{1 + e^{-z}}
+$$
+
+Therefore, the derivative can be written as:
+
+$$
+\frac{d}{dz} \sigma(z) = \sigma(z) \cdot (1 - \sigma(z))
+$$
