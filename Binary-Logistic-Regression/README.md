@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+
 # Binary Logistic Regression
 
 Binary Logistic Regression is a type of regression analysis used when the dependent variable (also called the target or outcome) is **binary** (i.e., it can take two possible values). It is used to model the probability that a given input belongs to one of the two possible classes.
