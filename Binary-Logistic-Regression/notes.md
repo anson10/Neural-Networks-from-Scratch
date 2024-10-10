@@ -18,8 +18,8 @@ Binary Logistic Regression is a type of regression analysis used when the depend
    $$
 
    Where:
-   - $ \sigma(z) $ is the predicted probability.
-   - $ z $ is the linear combination of the input features and their weights.
+   - $\sigma(z)$ is the predicted probability.
+   - $z$ is the linear combination of the input features and their weights.
 
 3. **Model Equation**: The logistic regression model estimates the probability that the dependent variable equals 1 (positive class). The model can be written as:
 
@@ -28,12 +28,12 @@ Binary Logistic Regression is a type of regression analysis used when the depend
    $$
 
    Where:
-   - $ P(y = 1 | X) $ is the probability that the output is 1 given the input $ X $.
-   - $ \beta_0 $ is the intercept (bias term).
-   - $ \beta_1, \dots, \beta_n $ are the coefficients (weights) for the input features $ x_1, \dots, x_n $.
+   - $P(y = 1 | X)$ is the probability that the output is 1 given the input $X$.
+   - $\beta_0$ is the intercept (bias term).
+   - $\beta_1, \dots, \beta_n$ are the coefficients (weights) for the input features $x_1, \dots, x_n$.
 
 4. **Interpretation of Coefficients**:
-   - The coefficients $ \beta_1, \beta_2, \dots $ represent the effect of each input feature on the log-odds of the outcome.
+   - The coefficients $\beta_1, \beta_2, \dots$ represent the effect of each input feature on the log-odds of the outcome.
    - The log-odds (or the logit) is the logarithm of the ratio of the probability of the positive class to the probability of the negative class.
 
    $$
@@ -43,8 +43,8 @@ Binary Logistic Regression is a type of regression analysis used when the depend
 5. **Decision Boundary**:
    - A probability threshold is set to classify the predicted output as either 0 or 1.
    - The most common threshold is 0.5:
-     - If $ P(y = 1 | X) \geq 0.5 $, predict class 1.
-     - If $ P(y = 1 | X) < 0.5 $, predict class 0.
+     - If $P(y = 1 | X) \geq 0.5$, predict class 1.
+     - If $P(y = 1 | X) < 0.5$, predict class 0.
 
 ## Training Process
 
@@ -57,9 +57,9 @@ Binary Logistic Regression is a type of regression analysis used when the depend
    $$
 
    Where:
-   - $ m $ is the number of training examples.
-   - $ y^{(i)} $ is the actual label for the $ i $-th example.
-   - $ \hat{y}^{(i)} $ is the predicted probability for the $ i $-th example.
+   - $m$ is the number of training examples.
+   - $y^{(i)}$ is the actual label for the $i$-th example.
+   - $\hat{y}^{(i)}$ is the predicted probability for the $i$-th example.
 
 # Sigmoid Activation Function and its Derivative
 
@@ -227,4 +227,3 @@ $$
 $$
 
 This derivative is useful for updating the weights during the training process of a neural network using gradient descent.
-
