@@ -1,5 +1,5 @@
-import numpy as np
-import nnfs
+import numpy as np # type: ignore
+import nnfs  # type: ignore
 from nnfs.datasets import spiral_data # type: ignore
 
 nnfs.init()
