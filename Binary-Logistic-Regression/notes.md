@@ -85,73 +85,49 @@ Where:
 - As $z \to \infty$, $\sigma(z) \to 1$.
 - As $z \to -\infty$, $\sigma(z) \to 0$.
 
-## Derivative of Sigmoid Function
+## Derivative of the Sigmoid Function
 
-The derivative of the sigmoid function is important for backpropagation in neural networks. Let's derive it step by step:
+### Sigmoid Function
 
-### Step-by-Step Derivation
+The **sigmoid function** is commonly used in binary classification tasks, as it maps any real-valued number to a value between 0 and 1, which can be interpreted as a probability.
 
-Starting with the sigmoid function:
+The sigmoid function is defined as:
 
-$$
-\sigma(z) = \frac{1}{1 + e^{-z}}
-$$
+`σ(z) = 1 / (1 + e^(-z))`
 
-We need to find the derivative of $\sigma(z)$ with respect to $z$.
+### Derivative of the Sigmoid Function
 
-1. **Rewrite the sigmoid function**:
-   We first express the function in a more convenient form for differentiation:
+We first express the function in a more convenient form for differentiation:
 
-   $$
-   \sigma(z) = (1 + e^{-z})^{-1}
-   $$
+`σ(z) = (1 + e^(-z))^(-1)`
 
-2. **Differentiate using the chain rule**:
-   Apply the chain rule to find the derivative of $\sigma(z)$:
+Differentiate using the chain rule: Apply the chain rule to find the derivative of `σ(z)`:
 
-   $$
-   \frac{d}{dz} \sigma(z) = \frac{d}{dz} \left( (1 + e^{-z})^{-1} \right)
-   $$
+`d/dz σ(z) = d/dz [(1 + e^(-z))^(-1)]`
 
-   Using the chain rule:
+Using the chain rule:
 
-   $$
-   \frac{d}{dz} \left( (1 + e^{-z})^{-1} \right) = -(1 + e^{-z})^{-2} \cdot \frac{d}{dz}(1 + e^{-z})
-   $$
+`d/dz [(1 + e^(-z))^(-1)] = -(1 + e^(-z))^(-2) * d/dz(1 + e^(-z))`
 
-3. **Differentiate the inner expression**:
-   Now, differentiate $1 + e^{-z}$:
+Differentiate the inner expression: Now, differentiate `1 + e^(-z)`:
 
-   $$
-   \frac{d}{dz}(1 + e^{-z}) = -e^{-z}
-   $$
+`d/dz(1 + e^(-z)) = -e^(-z)`
 
-4. **Substitute back into the chain rule**:
-   Substitute the result into the chain rule expression:
+Substitute back into the chain rule: Substitute the result into the chain rule expression:
 
-   $$
-   \frac{d}{dz} \sigma(z) = -(1 + e^{-z})^{-2} \cdot (-e^{-z})
-   $$
+`d/dz σ(z) = -(1 + e^(-z))^(-2) * (-e^(-z))`
 
-5. **Simplify**:
-   The negatives cancel out, leaving us with:
+Simplify: The negatives cancel out, leaving us with:
 
-   $$
-   \frac{d}{dz} \sigma(z) = \frac{e^{-z}}{(1 + e^{-z})^2}
-   $$
+`d/dz σ(z) = e^(-z) / (1 + e^(-z))^2`
 
-6. **Relate to the sigmoid function**:
-   Now, express this result in terms of $\sigma(z)$. Recall that:
+Relate to the sigmoid function: Now, express this result in terms of `σ(z)`. Recall that:
 
-   $$
-   \sigma(z) = \frac{1}{1 + e^{-z}} \quad \text{and} \quad 1 - \sigma(z) = \frac{e^{-z}}{1 + e^{-z}}
-   $$
+`σ(z) = 1 / (1 + e^(-z))  and  1 - σ(z) = e^(-z) / (1 + e^(-z))`
 
-   Therefore, the derivative can be written as:
+Therefore, the derivative can be written as:
 
-   $$
-   \frac{d}{dz} \sigma(z) = \sigma(z) \cdot (1 - \sigma(z))
-   $$
+`d/dz σ(z) = σ(z) * (1 - σ(z))`
 
 ### Final Result
 
@@ -187,65 +163,3 @@ This loss penalizes incorrect predictions. If the predicted probability ($\hat{y
 
 - If $y_i = 1$: The loss focuses on $\log(\hat{y}_i)$, so the predicted probability $\hat{y}_i$ should be close to 1 to minimize the loss.
 - If $y_i = 0$: The loss focuses on $\log(1 - \hat{y}_i)$, so the predicted probability $\hat{y}_i$ should be close to 0 to minimize the loss.
-
-## Derivative of the Sigmoid Function
-
-### Sigmoid Function
-
-The **sigmoid function** is commonly used in binary classification tasks, as it maps any real-valued number to a value between 0 and 1, which can be interpreted as a probability.
-
-The sigmoid function is defined as:
-
-$$
-\sigma(z) = \frac{1}{1 + e^{-z}}
-$$
-
-### Derivative of the Sigmoid Function
-
-We first express the function in a more convenient form for differentiation:
-
-$$
-\sigma(z) = (1 + e^{-z})^{-1}
-$$
-
-Differentiate using the chain rule: Apply the chain rule to find the derivative of $\sigma(z)$:
-
-$$
-\frac{d}{dz} \sigma(z) = \frac{d}{dz} \left( (1 + e^{-z})^{-1} \right)
-$$
-
-Using the chain rule:
-
-$$
-\frac{d}{dz} \left( (1 + e^{-z})^{-1} \right) = -(1 + e^{-z})^{-2} \cdot \frac{d}{dz}(1 + e^{-z})
-$$
-
-Differentiate the inner expression: Now, differentiate $1 + e^{-z}$:
-
-$$
-\frac{d}{dz}(1 + e^{-z}) = -e^{-z}
-$$
-
-Substitute back into the chain rule: Substitute the result into the chain rule expression:
-
-$$
-\frac{d}{dz} \sigma(z) = -(1 + e^{-z})^{-2} \cdot (-e^{-z})
-$$
-
-Simplify: The negatives cancel out, leaving us with:
-
-$$
-\frac{d}{dz} \sigma(z) = \frac{e^{-z}}{(1 + e^{-z})^2}
-$$
-
-Relate to the sigmoid function: Now, express this result in terms of $\sigma(z)$. Recall that:
-
-$$
-\sigma(z) = \frac{1}{1 + e^{-z}} \quad \text{and} \quad 1 - \sigma(z) = \frac{e^{-z}}{1 + e^{-z}}
-$$
-
-Therefore, the derivative can be written as:
-
-$$
-\frac{d}{dz} \sigma(z) = \sigma(z) \cdot (1 - \sigma(z))
-$$
