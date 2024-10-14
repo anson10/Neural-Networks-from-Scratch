@@ -10,6 +10,7 @@ Each chapter is organized into its own folder. In each folder, you'll find:
 - **Code:** Python implementations of the neural network concepts covered.
 
 ### Folder Structure:
+To update
 
 ```plaintext
 Neural-Network-From-Scratch/
