@@ -702,7 +702,7 @@ class Model:
         
         print(f'validation , ' + 
               f'acc: {validation_accuracy:.3f}, '+ 
-              f'loss:{validation_loss:.3f}')    
+              f'loss:{validation_loss:.3f}') 
 # Loads a MNIST dataset
 def load_mnist_dataset(dataset, path):
     # Scan all the directories and create a list of labels
@@ -773,4 +773,9 @@ model.finalize()
 model.train(X, y, validation_data=(X_test, y_test),
             epochs=10, batch_size=128, print_every=100)
 
-model.evaluate(X_test, y_test)
+# model.evaluate(X_test, y_test)
+
+# confidences = model.predict(X_test[:5])
+# print(confidences)
+
+model.save('fashion_mnist.model')

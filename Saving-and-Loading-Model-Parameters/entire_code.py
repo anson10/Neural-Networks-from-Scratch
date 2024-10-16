@@ -749,8 +749,8 @@ class Model:
         validation_loss = self.loss.calculate_accumulated()
         validation_accuracy = self.accuracy.calculate_accumulated()
 
-        # # Debugging output to check values and types
-        # print(f'Debug: validation_loss={validation_loss} (type={type(validation_loss)}), validation_accuracy={validation_accuracy} (type={type(validation_accuracy)})')
+        # Debugging output to check values and types
+        print(f'Debug: validation_loss={validation_loss} (type={type(validation_loss)}), validation_accuracy={validation_accuracy} (type={type(validation_accuracy)})')
 
     
         print(f'validation, ' + 
