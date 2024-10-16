@@ -10,23 +10,27 @@ Each chapter is organized into its own folder. In each folder, you'll find:
 - **Code:** Python implementations of the neural network concepts covered.
 
 ### Folder Structure:
-To update
-
-```plaintext
 Neural-Network-From-Scratch/
 │
-├── Chapter-1/
-│   ├── notes.md        # Notes from Chapter 1
-│   ├── code.ipynb         # Code implementation for Chapter 1
-│
-├── Chapter-2/
-│   ├── notes.md        # Notes from Chapter 2
-│   ├── code.ipynb        # Code implementation for Chapter 2
-│
-├── Chapter-3/
-│   └── ... (more chapters to come)
-│
-└── README.md           # This file
-```
+├── [Creating-our-First-Neurons](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Creating-our-First-Neurons)
+├── [Adding-Layers](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Adding-Layers)
+├── [Activation-Functions](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Activation-Functions)
+├── [Loss](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Loss)
+├── [Optimization](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Optimization)
+├── [Derivatives](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Derivatives)
+├── [Backpropagation](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Backpropagation)
+├── [Backprop-in-Depth](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Backprop-in-Depth)
+├── [Testing-Data](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Testing-Data)
+├── [L1-L2-Regularisation](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/L1-L2-Regularisation)
+├── [Dropout](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Dropout)
+├── [Binary-Logistic-Regression](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Binary-Logistic-Regression)
+├── [Regression](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Regression)
+├── [Model-Object](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Model-Object)
+├── [Real-Dataset](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Real-Dataset)
+├── [Model-Evaluation](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Model-Evaluation)
+├── [Saving-and-Loading-Model-Parameters](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Saving-and-Loading-Model-Parameters)
+├── [Prediction-Inference](https://github.com/anson10/Neural-Networks-from-Scratch/tree/main/Prediction-Inference)
+└── README.md
+
 ## Credits
 All credit for the content and concepts goes to Sentdex, the creator of this wonderful resource. This repository is a personal learning project inspired by his book and tutorial series.
